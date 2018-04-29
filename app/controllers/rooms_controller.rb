@@ -17,6 +17,12 @@ class RoomsController < ApplicationController
   end
 
 
+   def destroy
+    @room = Room.find(params[:id])
+    @room.destroy
+    redirect_to rooms_path, notice: "La habitacion se elimino"
+    end
+
   
   def edit
     @room = Room.find(params[:id])
@@ -30,7 +36,6 @@ class RoomsController < ApplicationController
       render :edit
     end
    end
-
 
 
   protected
