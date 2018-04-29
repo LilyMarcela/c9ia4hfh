@@ -1,16 +1,36 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Marketplace
+Explore
+ @LilyMarcela
+Sign out
+0
+0 83 royne/c9ia4hfh
+forked from makeitrealcamp/c9ia4hfh
+ Code  Pull requests 0  Projects 0  Wiki  Insights
+c9ia4hfh/app/views/rooms/_form.html.erb
+30f36b8  on Feb 27
+@royne royne agrega columna a rooms
+@royne @germanescobar
+    
+50 lines (41 sloc)  1.61 KB
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <h1><%= @room.new_record? ? "Publicar": "Editar" %> Habitación</h1>
 
-
       <% if @room.errors.any? %>
-        <div class ="alert alert-danger"
+        <div class="alert alert-danger">
           <ul>
-            <%@room.errors.full_messages.each do |msg| %>
+            <% @room.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
             <% end %>
           </ul>
         </div>
+      <% end %>
 
       <%= form_for @room do |f| %>
         <div class="form-group">
@@ -37,7 +57,6 @@
 
         <div class="form-group">
           <%= f.text_field :price_per_night, class: 'form-control input-lg', placeholder: "Precio por noche" %>
-
         </div>
 
         <div class="actions text-right">
@@ -47,3 +66,4 @@
     </div>
   </div>
 </div>
+
