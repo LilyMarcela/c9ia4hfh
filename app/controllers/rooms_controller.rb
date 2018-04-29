@@ -16,6 +16,7 @@ class RoomsController < ApplicationController
     end
   end
 
+
   
   def edit
     @room = Room.find(params[:id])
@@ -28,7 +29,8 @@ class RoomsController < ApplicationController
     else
       render :edit
     end
-  end
+   end
+
 
 
   protected
